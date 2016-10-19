@@ -15,7 +15,7 @@ import config
 
 bot = telebot.TeleBot(config.token)
 
-# debug log
+# debug logs
 # logger = telebot.logger
 # telebot.logger.setLevel(DEBUG)
 
