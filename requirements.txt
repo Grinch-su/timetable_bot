@@ -1,0 +1,2 @@
+pyTelegramBotAPI==2.1.7
+xlrd==1.0.0
