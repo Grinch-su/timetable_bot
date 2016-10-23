@@ -20,7 +20,6 @@ bot = telebot.TeleBot(config.token)
 # logger = telebot.logger
 # telebot.logger.setLevel(DEBUG)
 
-
 txtHelp = """
 Команды:
 Меню - /menu
@@ -105,15 +104,16 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
+
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=21, start_rowx=4, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 22, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=21, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 22, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -132,16 +132,16 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
 
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=23, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 24, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=23, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 24, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -159,15 +159,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=19, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 20, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=19, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 20, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -186,15 +186,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True,formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx = 15,start_rowx = 7,end_rowx = 15)
-    cabinet = open_sheet.col_values(colx = 16, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx = 15,start_rowx = 7,end_rowx = 20)
+    cabinet = open_sheet.col_values(colx = 16, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -213,15 +213,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=17, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 18, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=17, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 18, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -239,15 +239,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=13, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 14, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=13, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 14, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -266,15 +266,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=3, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 4, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=3, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 4, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -293,15 +293,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=5, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 6, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=5, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 6, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -320,15 +320,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx=7, start_rowx=7, end_rowx=15)
-    cabinet = open_sheet.col_values(colx = 8, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx=7, start_rowx=7, end_rowx=20)
+    cabinet = open_sheet.col_values(colx = 8, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -347,15 +347,15 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand=True, formatting_info=True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
-    subject = open_sheet.col_values(colx = 9, start_rowx = 7, end_rowx = 15)
-    cabinet = open_sheet.col_values(colx = 10, start_rowx = 7, end_rowx = 15)
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
+    subject = open_sheet.col_values(colx = 9, start_rowx = 7, end_rowx = 20)
+    cabinet = open_sheet.col_values(colx = 10, start_rowx = 7, end_rowx = 20)
     cabinet = list(map(str,cabinet))
     lessons = []
     lessons.append(day)
@@ -374,13 +374,13 @@ def get_table(message):
     timeout = 10
     socket.setdefaulttimeout(timeout)
 
-    bot.send_message(message.chat.id, 'Загрузка файла с сервера 🔄')
+    bot.send_message(message.chat.id, 'Загрузка файла 🔄')
     urlretrieve(config.url, config.file)
     open_xls = xlrd.open_workbook(config.source_xls, on_demand = True, formatting_info = True)
     open_sheet = open_xls.sheet_by_index(0)
     bot.send_message(message.chat.id, open_sheet.cell_value(0, 5))
-    day = (open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20))
-    period = (open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20))
+    day = open_sheet.col_values(colx=1, start_rowx=7, end_rowx=20)
+    period = open_sheet.col_values(colx=2, start_rowx=7, end_rowx=20)
     subject = open_sheet.col_values(colx = 11, start_rowx = 7, end_rowx =20)
     cabinet = open_sheet.col_values(colx=12, start_rowx=7, end_rowx=20)
     cabinet = list(map(str,cabinet))
