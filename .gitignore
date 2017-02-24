@@ -1,0 +1,5 @@
+.idea
+.~lock.Rechnaya.xls#
+Rechnaya.xls
+__pycache__/
+Будет удалено __pycache__/
