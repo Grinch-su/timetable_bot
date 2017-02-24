@@ -1,7 +1,7 @@
 from urllib.parse import quote_plus
 
 # krstc_bot TOKEN
-TOKEN = '244694359:AAH5ZEaFZUKVU5yKqAKT_zOLTQLqT_jOJfg'
+TOKEN = ''
 SOURCE_XLS = "Rechnaya.xls"
 URL = 'http://www.krstc.ru/site/www/raspis/{0}.xls'.format(quote_plus('Речная'))
 FILE = 'Rechnaya.xls'
