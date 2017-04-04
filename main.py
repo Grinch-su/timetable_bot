@@ -85,77 +85,77 @@ def news(message):
 @bot.message_handler(commands=["46"])
 @bot.message_handler(func=lambda message: message.text == '46')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=21, ccx=22)
+    return timetable.getTable(message, scx=21, ccx=22)
 
 
 # Обработчик команд "47", "/47"
 @bot.message_handler(commands=["47"])
 @bot.message_handler(func=lambda message: message.text == '47')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=23, ccx=24)
+    return timetable.getTable(message, scx=23, ccx=24)
 
 
 # Обработчик команд "42", "/42"
 @bot.message_handler(commands=["42"])
 @bot.message_handler(func=lambda message: message.text == '42')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=19, ccx=20)
+    return timetable.getTable(message, scx=19, ccx=20)
 
 
 # Обработчик команд "36", "/36"
 @bot.message_handler(commands=["36"])
 @bot.message_handler(func=lambda message: message.text == '36')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=15, ccx=16)
+    return timetable.getTable(message, scx=15, ccx=16)
 
 
 # Обработчик команд "37", "/37"
 @bot.message_handler(commands=["37"])
 @bot.message_handler(func=lambda message: message.text == '37')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=17, ccx=18)
+    return timetable.getTable(message, scx=17, ccx=18)
 
 
 # Обработчик команд "32", "/32"
 @bot.message_handler(commands=["32"])
 @bot.message_handler(func=lambda message: message.text == '32')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=13, ccx=14)
+    return timetable.getTable(message, scx=13, ccx=14)
 
 
 # Обработчик команд "12", "/12"
 @bot.message_handler(commands=["12"])
 @bot.message_handler(func=lambda message: message.text == '12')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=3, ccx=4)
+    return timetable.getTable(message, scx=3, ccx=4)
 
 
 # Обработчик команд "16", "/16"
 @bot.message_handler(commands=["16"])
 @bot.message_handler(func=lambda message: message.text == '16')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=5, ccx=6)
+    return timetable.getTable(message, scx=5, ccx=6)
 
 
 # Обработчик команд "22", "/22"
 @bot.message_handler(commands=["22"])
 @bot.message_handler(func=lambda message: message.text == '22')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=7, ccx=8)
+    return timetable.getTable(message, scx=7, ccx=8)
 
 
 # Обработчик команд "26.1", "/26_1"
 @bot.message_handler(commands=["26_1"])
 @bot.message_handler(func=lambda message: message.text == '26.1')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=9, ccx=10)
+    return timetable.getTable(message, scx=9, ccx=10)
 
 
 # Обработчик команд "26.2", "/26_2"
 @bot.message_handler(commands=["26_2"])
 @bot.message_handler(func=lambda message: message.text == '26.2')
 def get_table(message):
-    return timetable.getTable(message, dcx=1, pcx=2, scx=11, ccx=12)
+    return timetable.getTable(message, scx=11, ccx=12)
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
